@@ -1,11 +1,9 @@
-import HotProduct from './HotProduct'
-import PopProduct from './PopProduct'
+import Product from './Product'
 
 const Products = () => {
     return (
         <div className='container'>
-            <HotProduct />
-            <PopProduct />
+            <Product />
         </div>
     )
 }

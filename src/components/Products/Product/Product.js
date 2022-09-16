@@ -1,4 +1,4 @@
-const HotProduct = () => {
+const Product = () => {
   return (
     <>
       <div className="mx-auto max-w-[1920px] px-4 md:px-6 lg:px-8 2xl:px-10">
@@ -107,4 +107,4 @@ const HotProduct = () => {
   );
 };
 
-export default HotProduct;
+export default Product;
