@@ -1,3 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .col {
+    @apply px-8;
+  }
+  .row {
+    @apply flex flex-wrap -mx-8;
+  }
+  .container {
+    @apply mx-auto px-8 w-full;
+  }
+}
+.sticky {
+  @apply top-0 left-0 fixed;
+}
+.text-inherit {
+  a:not(.btn):not(.no-underline) {
+    color: inherit;
+    @apply underline;
+    .{
+      @apply hover:no-underline;
+    }
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
