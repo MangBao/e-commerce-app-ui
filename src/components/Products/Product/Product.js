@@ -31,11 +31,11 @@ const Product = ({ product }) => {
               </span>
               <img
                 alt="Fresh Green Leaf Lettuce"
-                src="https://borobazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fp-1.png&w=640&q=100"
+                src={product.image}
                 decoding="async"
                 data-nimg="intrinsic"
                 className="object-cover absolute top-0 left-0 right-0 bottom-0 box-border p-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
-                srcSet="https://borobazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fp-1.png&w=640&q=100"
+                srcSet={product.image}
               />
             </span>
             <div className="w-full h-full absolute top-0 pt-2.5 md:pt-3.5 px-3 md:px-4 lg:px-[18px] z-10 -mx-0.5 sm:-mx-1">
