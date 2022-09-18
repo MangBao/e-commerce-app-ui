@@ -1,4 +1,9 @@
+import LazyLoad from "react-lazyload";
+
 const Product = ({ product }) => {
+  const img_base64 =
+    "data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27230%27%20height=%27200%27/%3e";
+
   return (
     <div className="col w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 h-full py-6">
       <div className="shadow-card bg-white rounded-md cursor-pointer overflow-hidden transition-all duration-300 relative">
@@ -18,25 +23,24 @@ const Product = ({ product }) => {
                   height: "initial",
                 }}
               >
-                <img
-                  className="block max-w-full bg-none opacity-100 border-0 m-0 p-0"
-                  style={{
-                    width: "initial",
-                    height: "initial",
-                  }}
-                  alt=""
-                  aria-hidden="true"
-                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27230%27%20height=%27200%27/%3e"
-                />
+                <LazyLoad
+                  once={true}
+                  placeholder={
+                    <img src={img_base64} alt="..." />
+                  }
+                >
+                  <img
+                    className="block max-w-full bg-none opacity-100 border-0 m-0 p-0 lazy-load"
+                    style={{
+                      width: "initial",
+                      height: "initial",
+                    }}
+                    alt="..."
+                    aria-hidden="true"
+                    src={product.image}
+                  />
+                </LazyLoad>
               </span>
-              <img
-                alt="Fresh Green Leaf Lettuce"
-                src={product.image}
-                decoding="async"
-                data-nimg="intrinsic"
-                className="object-cover absolute top-0 left-0 right-0 bottom-0 box-border p-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
-                srcSet={product.image}
-              />
             </span>
             <div className="w-full h-full absolute top-0 pt-2.5 md:pt-3.5 px-3 md:px-4 lg:px-[18px] z-10 -mx-0.5 sm:-mx-1">
               {product.sale === "yes" && (
