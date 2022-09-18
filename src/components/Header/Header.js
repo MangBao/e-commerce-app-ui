@@ -24,9 +24,10 @@ const Header = () => {
 
   return (
     <header
-      className={`header w-full z-20 shadow-bottom ${
-        isSticky ? " sticky" : ""
+      className={`header w-full z-20 shadow-bottom bg-white ${
+        isSticky ? "sticky" : ""
       }`}
+      ref={ref}
     >
       <div className="container">
         <div className="row justify-between">
